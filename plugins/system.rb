@@ -1,6 +1,6 @@
-# Lingrvant system commands
+# Slackvant system commands
 
-module Lingrvant
+module Slackvant
   class System < Plugin
 
     def help

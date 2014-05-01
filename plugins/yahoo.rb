@@ -3,7 +3,7 @@
 require 'net/http'
 require 'csv'
 
-module Lingrvant
+module Slackvant
   class Yahoo < Plugin
     def help
       "!yf symbol"

@@ -1,6 +1,6 @@
 # Simple echo
 
-module Lingrvant
+module Slackvant
   class Echo < Plugin
 
     def help

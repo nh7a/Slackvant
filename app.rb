@@ -1,4 +1,4 @@
-# Copyright (c) 2013 Naoki Hiroshima
+# Copyright (c) 2014 Naoki Hiroshima
 # You can redistribute this and/or modify this under the same terms as Ruby
 
 require 'rubygems'
@@ -10,32 +10,25 @@ $stdout.sync = true
 post '/' do
   begin
     response = []
-    raw = request.env["rack.input"].read
-    body = JSON.parse(raw)
-    body['events'].each do |e|
-      m = e['message']
-      r = Lingrvant::Bot.handle(m['text'], m)
-      response << r if r
-    end
-    response.join("\n")
-  rescue Exception => e
-    puts e
+    text = params[:text]
+    r = Slackvant::Bot.handle(text)
+    JSON.generate({text: r}) if r
   end
 end
 
 get '/' do
 <<EOT
-  <h1>Lingrvant</h1>
+  <h1>Slackvant</h1>
   <form method='get'>
-    <input type="text" name="s" autofocus />
+    <input type="text" name="text" autofocus />
     <input type="submit">
   </form>
   <hr>
-  <pre>#{Lingrvant::Bot.handle(params['s']) if params['s']}</pre>
+  <pre>#{Slackvant::Bot.handle(params[:text]) if params[:text]}</pre>
 EOT
 end
 
-module Lingrvant
+module Slackvant
   class Bot
     @@plugins = []
 

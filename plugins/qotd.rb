@@ -2,7 +2,7 @@
 
 require 'net/http'
 
-module Lingrvant
+module Slackvant
   class QOTD < Plugin
 
     def help

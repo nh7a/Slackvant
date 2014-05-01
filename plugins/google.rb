@@ -2,9 +2,9 @@
 
 require 'googleajax'
 
-GoogleAjax.referrer = 'lingr.com'
+GoogleAjax.referrer = 'slack.com'
 
-module Lingrvant
+module Slackvant
   class Google < Plugin
     def help
       "!G[iv] query..."
