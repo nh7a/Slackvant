@@ -42,6 +42,7 @@ module Slackvant
       end
 
       def handle(text, params=nil)
+        return "" unless text
         response = []
         @@plugins.each do |i|
           begin
