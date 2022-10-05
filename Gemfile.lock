@@ -1,7 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.6)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     buftok (0.2.0)
     diff-lcs (1.2.5)
     equalizer (0.0.9)
@@ -17,6 +18,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     multipart-post (2.0.0)
     naught (1.0.0)
+    public_suffix (5.0.0)
     rack (1.6.12)
     rack-test (0.6.2)
       rack (>= 1.0)
